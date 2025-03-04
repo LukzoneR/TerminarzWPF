@@ -50,3 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+Terminarz/Terminarz/obj/Debug/net8.0-windows/Terminarz.AssemblyInfo.cs
+Terminarz/Terminarz/obj/Debug/net8.0-windows/Terminarz.AssemblyInfoInputs.cache

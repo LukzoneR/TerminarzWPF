@@ -1,0 +1,9 @@
+﻿CREATE TABLE Events (
+    id INT PRIMARY KEY NOT NULL IDENTITY,
+    Name VARCHAR(255) NOT NULL,
+    Location VARCHAR(255),
+    Starts DATETIME NOT NULL,
+    Ends DATETIME NOT NULL,
+    Color VARCHAR(20),
+    Description TEXT
+);

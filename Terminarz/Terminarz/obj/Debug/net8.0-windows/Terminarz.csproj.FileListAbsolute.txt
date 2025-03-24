@@ -131,7 +131,6 @@ D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\Terminarz.csproj.As
 D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\View\MainWindow.g.cs
 D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\App.g.cs
 D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\Terminarz_MarkupCompile.cache
-D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\Terminarz_MarkupCompile.lref
 D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\View\MainWindow.baml
 D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\Terminarz.g.resources
 D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\Terminarz.GeneratedMSBuildEditorConfig.editorconfig
@@ -153,3 +152,5 @@ D:\TerminarzWPF\Terminarz\Terminarz\bin\Debug\net8.0-windows\runtimes\win-x64\na
 D:\TerminarzWPF\Terminarz\Terminarz\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 D:\TerminarzWPF\Terminarz\Terminarz\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\TerminarzWPF\Terminarz\Terminarz\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\Terminarz_MarkupCompile.lref
+D:\TerminarzWPF\Terminarz\Terminarz\obj\Debug\net8.0-windows\App.baml

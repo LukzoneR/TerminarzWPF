@@ -5,34 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminarz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Background="Black">
+    
+    <Grid Background="#1E1E1E">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
 
-        <!-- Navigation Bar -->
-        <Grid Grid.Row="0" Background="LightGray" Height="40">
+        <!-- Header month year -->
+        <Grid Grid.Row="0" Background="#333333">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="&#x276E;" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30"/>
-            <!-- Left Arrow -->
-            <TextBlock Grid.Column="1" Text="December 2020" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Grid.Column="2" Content="&#x276F;" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30"/>
-            <!-- Right Arrow -->
+            <Button Grid.Column="0" Content="&#x276E;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30"/>
+
+            <Grid Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="December" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="0,0,5,0"/>
+                <TextBlock Grid.Column="1" Text="2020" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="5,0,0,0"/>
+            </Grid>
+            <Button Grid.Column="2" Content="&#x276F;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30"/>
+            
         </Grid>
 
-        <!-- Header displaying days of the week -->
-        <Grid Grid.Row="1" Background="White">
+        <!-- Header week -->
+        <Grid Background="#222222" Grid.RowSpan="2" Margin="0,25,0,0" Panel.ZIndex="1">
+            <Grid.Effect>
+                <DropShadowEffect Color="black" Direction="270" ShadowDepth="2" Opacity="0.5"/>
+            </Grid.Effect>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
-                <!-- Time column -->
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -44,34 +78,33 @@
 
 
 
-            <TextBlock Grid.Column="1" Text="Monday" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="top" Width="83"/>
-            <TextBlock Grid.Column="1" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
+            <TextBlock Grid.Column="1" Text="Monday" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="top" Width="83" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="1" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
-            <TextBlock Grid.Column="2" Text="Tuesday" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="2" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
-            
-            <TextBlock Grid.Column="3" Text="Wednesday" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="3" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
-            
-            <TextBlock Grid.Column="4" Text="Thursday" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="4" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
-            
-            <TextBlock Grid.Column="5" Text="Friday" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="5" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
-            
-            <TextBlock Grid.Column="6" Text="Saturday" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="6" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
-            
-            <TextBlock Grid.Column="7" Text="Sunday" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="7" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28"/>
+            <TextBlock Grid.Column="2" Text="Tuesday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="2" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+
+            <TextBlock Grid.Column="3" Text="Wednesday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="3" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+
+            <TextBlock Grid.Column="4" Text="Thursday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="4" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+
+            <TextBlock Grid.Column="5" Text="Friday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="5" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+
+            <TextBlock Grid.Column="6" Text="Saturday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="6" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+
+            <TextBlock Grid.Column="7" Text="Sunday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
+            <TextBlock Grid.Column="7" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
         </Grid>
 
-        <!-- Scrollable scheduler -->
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+        <!-- Scrol scheduler -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Grid.RowSpan="25" Margin="0,50,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="80"/>
-                    <!-- Time column -->
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -82,7 +115,22 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <!-- Define rows for each hour (9 AM to 5 PM) -->
+                    <!-- rows for each hour -->
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
@@ -95,27 +143,43 @@
                 </Grid.RowDefinitions>
 
                 <!-- Time labels -->
-                <TextBlock Grid.Row="0" Text="9 AM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="1" Text="10 AM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="2" Text="11 AM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="3" Text="12 PM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="4" Text="1 PM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="5" Text="2 PM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="6" Text="3 PM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="7" Text="4 PM" VerticalAlignment="Center" Margin="5"/>
-                <TextBlock Grid.Row="8" Text="5 PM" VerticalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="0" Text="1:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="2:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="2" Text="3:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="3" Text="4:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="4" Text="5:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="5" Text="6:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="6" Text="7:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="7" Text="8:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="8" Text="9:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="9" Text="10:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="10" Text="11:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="11" Text="12:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="12" Text="13:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="13" Text="14:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="14" Text="15:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="15" Text="16:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="16" Text="17:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="17" Text="18:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="18" Text="19:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="19" Text="20:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="20" Text="21:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="21" Text="22:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="22" Text="23:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="23" Text="24:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+
 
                 <!-- Grid lines -->
                 <Border Grid.RowSpan="9" Grid.ColumnSpan="8" BorderBrush="Gray" BorderThickness="1"/>
 
                 <!-- Vertical Lines -->
-                <Border Grid.RowSpan="9" Grid.Column="1" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
-                <Border Grid.RowSpan="9" Grid.Column="2" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
-                <Border Grid.RowSpan="9" Grid.Column="3" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
-                <Border Grid.RowSpan="9" Grid.Column="4" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
-                <Border Grid.RowSpan="9" Grid.Column="5" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
-                <Border Grid.RowSpan="9" Grid.Column="6" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
-                <Border Grid.RowSpan="9" Grid.Column="7" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="1" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="2" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="3" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="4" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="5" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="6" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
+                <Border Grid.RowSpan="24" Grid.Column="7" BorderBrush="Gray" BorderThickness="1,0,0,0"/>
 
                 <!-- Horizontal Lines -->
                 <Border Grid.ColumnSpan="8" Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
@@ -126,8 +190,23 @@
                 <Border Grid.ColumnSpan="8" Grid.Row="6" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
                 <Border Grid.ColumnSpan="8" Grid.Row="7" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
                 <Border Grid.ColumnSpan="8" Grid.Row="8" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="9" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="10" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="11" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="12" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="13" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="14" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="15" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="16" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="17" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="18" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="19" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="20" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="21" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="22" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
+                <Border Grid.ColumnSpan="8" Grid.Row="23" BorderBrush="Gray" BorderThickness="0,1,0,0"/>
 
-                <!-- Sample Event -->
+                <!-- Event -->
                 <Border Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Background="Blue" CornerRadius="5"
                         Margin="5">
                     <TextBlock Text="Client Meeting" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>

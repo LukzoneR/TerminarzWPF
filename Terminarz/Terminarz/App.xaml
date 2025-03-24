@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:Terminarz"
              StartupUri="View\MainWindow.xaml">
     <Application.Resources>
-         
+
+        <FontFamily x:Key="CustomFontFamily">/Terminarz;component/res/variableFont.ttf#variableFont</FontFamily>
+
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource CustomFontFamily}" />
+        </Style>
+
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="{StaticResource CustomFontFamily}" />
+        </Style>
     </Application.Resources>
 </Application>

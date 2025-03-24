@@ -19,6 +19,10 @@ namespace Terminarz
         public MainWindow()
         {
             InitializeComponent();
+
+            FontFamily customFontFamily = new FontFamily("pack://application:,,,/res/variableFont.ttf#variableFont");
+            this.FontFamily = customFontFamily;
+
         }
     }
 }

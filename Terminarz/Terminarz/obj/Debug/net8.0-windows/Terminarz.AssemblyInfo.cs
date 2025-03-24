@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Terminarz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f944743f38dd3aa447afbe42d3c45221d80adff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8750225ff1898602cf392ea0386b0574da83323c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Terminarz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Terminarz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

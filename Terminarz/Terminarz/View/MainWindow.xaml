@@ -53,8 +53,8 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Text="December" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="0,0,5,0"/>
-                <TextBlock Grid.Column="1" Text="2020" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="5,0,0,0"/>
+                <TextBlock Grid.Column="0" Text="March" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="0,0,5,0"/>
+                <TextBlock Grid.Column="1" Text="2025" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="5,0,0,0"/>
             </Grid>
             <Button Grid.Column="2" Content="&#x276F;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30"/>
             

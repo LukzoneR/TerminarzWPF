@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+QAs/xmKEo4=",
+  "dgSpecHash": "rAJPvaJIx1w=",
   "success": true,
-  "projectFilePath": "D:\\TerminarzWPF\\Terminarz\\Terminarz\\Terminarz.csproj",
+  "projectFilePath": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\Terminarz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marci\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\marci\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

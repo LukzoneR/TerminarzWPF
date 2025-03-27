@@ -4,8 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminarz"
+        xmlns:vm="clr-namespace:Terminarz.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="Black">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
     
     <Grid Background="#1E1E1E">
         <Grid.RowDefinitions>
@@ -45,7 +51,7 @@
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="&#x276E;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30"/>
+            <Button Grid.Column="0" Content="&#x276E;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30" Command="{Binding PreviousWeekCommand}"/>
 
             <Grid Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -53,10 +59,11 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Text="March" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="0,0,5,0"/>
-                <TextBlock Grid.Column="1" Text="2025" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="5,0,0,0"/>
+                <TextBlock Grid.Column="0" Text="{Binding CurrentMonth}" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="0,0,5,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding CurrentYear}" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="5,0,0,0"/>
             </Grid>
-            <Button Grid.Column="2" Content="&#x276F;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30"/>
+            
+            <Button Grid.Column="2" Content="&#x276F;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30" Command="{Binding NextWeekCommand}"/>
             
         </Grid>
 
@@ -77,27 +84,26 @@
             </Grid.ColumnDefinitions>
 
 
-
             <TextBlock Grid.Column="1" Text="Monday" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="top" Width="83" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="1" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="{Binding DaysOfWeek[0]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
             <TextBlock Grid.Column="2" Text="Tuesday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="2" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="2" Text="{Binding DaysOfWeek[1]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
             <TextBlock Grid.Column="3" Text="Wednesday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="3" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="3" Text="{Binding DaysOfWeek[2]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
             <TextBlock Grid.Column="4" Text="Thursday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="4" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="4" Text="{Binding DaysOfWeek[3]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
             <TextBlock Grid.Column="5" Text="Friday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="5" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="5" Text="{Binding DaysOfWeek[4]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
             <TextBlock Grid.Column="6" Text="Saturday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="6" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="6" Text="{Binding DaysOfWeek[5]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
 
             <TextBlock Grid.Column="7" Text="Sunday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="7" Text="12" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="7" Text="{Binding DaysOfWeek[6]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
         </Grid>
 
         <!-- Scrol scheduler -->

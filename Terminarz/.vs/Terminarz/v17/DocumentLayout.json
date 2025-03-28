@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\",
+  "WorkspaceRootPath": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|d:\\terminarzwpf\\terminarzwpf\\terminarz\\terminarz\\viewmodel\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|c:\\users\\marcin\\documents\\github\\terminarzwpf\\terminarz\\terminarz\\viewmodel\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|solutionrelative:terminarz\\viewmodel\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|d:\\terminarzwpf\\terminarzwpf\\terminarz\\terminarz\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|c:\\users\\marcin\\documents\\github\\terminarzwpf\\terminarz\\terminarz\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|solutionrelative:terminarz\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|d:\\terminarzwpf\\terminarzwpf\\terminarz\\terminarz\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|c:\\users\\marcin\\documents\\github\\terminarzwpf\\terminarz\\terminarz\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|solutionrelative:terminarz\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|d:\\terminarzwpf\\terminarzwpf\\terminarz\\terminarz\\model\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|c:\\users\\marcin\\documents\\github\\terminarzwpf\\terminarz\\terminarz\\model\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|solutionrelative:terminarz\\model\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|d:\\terminarzwpf\\terminarzwpf\\terminarz\\terminarz\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|c:\\users\\marcin\\documents\\github\\terminarzwpf\\terminarz\\terminarz\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7CCFE87D-D988-43BA-8F22-1B058B7D1EE0}|Terminarz\\Terminarz.csproj|solutionrelative:terminarz\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -36,10 +36,10 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "RelayCommand.cs",
-              "DocumentMoniker": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\RelayCommand.cs",
               "RelativeDocumentMoniker": "Terminarz\\ViewModel\\RelayCommand.cs",
-              "ToolTip": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\RelayCommand.cs*",
-              "RelativeToolTip": "Terminarz\\ViewModel\\RelayCommand.cs*",
+              "ToolTip": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\RelayCommand.cs",
+              "RelativeToolTip": "Terminarz\\ViewModel\\RelayCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T21:48:12.866Z",
@@ -49,52 +49,48 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\Model\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\Model\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Terminarz\\Model\\AppDbContext.cs",
-              "ToolTip": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\Model\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\Model\\AppDbContext.cs",
               "RelativeToolTip": "Terminarz\\Model\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T21:47:14.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T21:47:14.02Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainViewModel.cs",
-              "DocumentMoniker": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "Terminarz\\ViewModel\\MainViewModel.cs",
-              "ToolTip": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "Terminarz\\ViewModel\\MainViewModel.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAkwD8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T20:24:38.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T20:24:38.324Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Terminarz\\View\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml.cs",
               "RelativeToolTip": "Terminarz\\View\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T22:11:44.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T22:11:44.642Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Terminarz\\View\\MainWindow.xaml",
-              "ToolTip": "D:\\TerminarzWPF\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\marcin\\Documents\\GitHub\\TerminarzWPF\\Terminarz\\Terminarz\\View\\MainWindow.xaml",
               "RelativeToolTip": "Terminarz\\View\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-17T20:35:12.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T20:35:12.733Z"
             }
           ]
         }

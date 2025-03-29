@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
-namespace Terminarz.Model
+namespace Terminarz.Model;
+class AppDbContext : DbContext
 {
-    class AppDbContext : DbContext
-    {
-        public DbSet<Event>? Events { get; set; }
-    }
+    public DbSet<Event>? Events { get; set; }
 }

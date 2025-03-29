@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.ComponentModel.DataAnnotations;
 
-namespace Terminarz.Model
+namespace Terminarz.Model;
+class Event
 {
-    class Event
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Location { get; set; }
-        public DateTime Starts { get; set; }
-        public DateTime Ends { get; set; }
-        public string? Color { get; set; }
-        public string? Description { get; set; }
-    }
+    public int Id { get; set; }
+    [Key]
+    public string? Name { get; set; }
+    [Required]
+    public string? Location { get; set; }
+    public DateTime Starts { get; set; }
+    [Required]
+    public DateTime Ends { get; set; }
+    [Required]
+    public string? Color { get; set; }
+    public string? Description { get; set; }
 }

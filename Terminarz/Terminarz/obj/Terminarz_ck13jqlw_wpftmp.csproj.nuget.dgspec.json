@@ -54,18 +54,6 @@
               "target": "Package",
               "version": "[6.5.1, )"
             },
-            "MahApps.Metro": {
-              "target": "Package",
-              "version": "[2.4.10, )"
-            },
-            "MaterialDesignColors": {
-              "target": "Package",
-              "version": "[5.2.1, )"
-            },
-            "MaterialDesignThemes": {
-              "target": "Package",
-              "version": "[5.2.1, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.2, )"

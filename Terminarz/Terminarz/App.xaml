@@ -4,17 +4,11 @@
              xmlns:local="clr-namespace:Terminarz"
              StartupUri="View\MainWindow.xaml">
     <Application.Resources>
-
-        <FontFamily x:Key="CustomFontFamily">/Terminarz;component/res/variableFont.ttf#variableFont</FontFamily>
-
-
-        <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource CustomFontFamily}" />
-        </Style>
-
-
-        <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="{StaticResource CustomFontFamily}" />
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

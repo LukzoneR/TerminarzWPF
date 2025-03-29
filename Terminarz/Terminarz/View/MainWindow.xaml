@@ -12,7 +12,13 @@
         <vm:MainViewModel/>
     </Window.DataContext>
 
-    
+    <Window.Resources>
+        <Style x:Key="CurrentDayStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+
     <Grid Background="#1E1E1E">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -62,9 +68,8 @@
                 <TextBlock Grid.Column="0" Text="{Binding CurrentMonth}" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="0,0,5,0"/>
                 <TextBlock Grid.Column="1" Text="{Binding CurrentYear}" FontSize="16" FontWeight="Bold" Foreground="#e4e3e1" TextAlignment="Center" Margin="5,0,0,0"/>
             </Grid>
-            
+
             <Button Grid.Column="2" Content="&#x276F;" FontSize="16" HorizontalAlignment="Center" Background="#555555" VerticalAlignment="Center" Width="30" Command="{Binding NextWeekCommand}"/>
-            
         </Grid>
 
         <!-- Header week -->
@@ -85,25 +90,103 @@
 
 
             <TextBlock Grid.Column="1" Text="Monday" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="top" Width="83" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="1" Text="{Binding DaysOfWeek[0]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="{Binding DaysOfWeek[0]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="0">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
             <TextBlock Grid.Column="2" Text="Tuesday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="2" Text="{Binding DaysOfWeek[1]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="2" Text="{Binding DaysOfWeek[1]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="1">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
             <TextBlock Grid.Column="3" Text="Wednesday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="3" Text="{Binding DaysOfWeek[2]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="3" Text="{Binding DaysOfWeek[2]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="2">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
             <TextBlock Grid.Column="4" Text="Thursday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="4" Text="{Binding DaysOfWeek[3]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="4" Text="{Binding DaysOfWeek[3]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="3">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
             <TextBlock Grid.Column="5" Text="Friday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="5" Text="{Binding DaysOfWeek[4]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="5" Text="{Binding DaysOfWeek[4]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="4">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
             <TextBlock Grid.Column="6" Text="Saturday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="6" Text="{Binding DaysOfWeek[5]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="6" Text="{Binding DaysOfWeek[5]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="5">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
             <TextBlock Grid.Column="7" Text="Sunday" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e4e3e1" TextAlignment="Center" Padding="4"/>
-            <TextBlock Grid.Column="7" Text="{Binding DaysOfWeek[6]}" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28" Foreground="#e4e3e1" TextAlignment="Center"/>
+            <TextBlock Grid.Column="7" Text="{Binding DaysOfWeek[6]}" HorizontalAlignment="Center" Margin="0,25,0,11" Width="28">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentDayIndex}" Value="6">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button Content=" + " HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
         </Grid>
 
         <!-- Scrol scheduler -->
@@ -173,7 +256,6 @@
                 <TextBlock Grid.Row="21" Text="22:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
                 <TextBlock Grid.Row="22" Text="23:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
                 <TextBlock Grid.Row="23" Text="24:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-
 
                 <!-- Grid lines -->
                 <Border Grid.RowSpan="9" Grid.ColumnSpan="8" BorderBrush="Gray" BorderThickness="1"/>

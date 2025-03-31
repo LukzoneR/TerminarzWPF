@@ -3,7 +3,7 @@ using Terminarz.Model;
 
 namespace Terminarz.View;
 
-public partial class AddEventWindow : Window
+public partial class AddEventWindow : MahApps.Metro.Controls.MetroWindow
 {
     public AddEventWindow()
     {
@@ -16,7 +16,7 @@ public partial class AddEventWindow : Window
             StartDatePicker.SelectedDateTime == null ||
             EndDatePicker.SelectedDateTime == null)
         {
-            MessageBox.Show("Wypełnij wymagane pola!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show("Fill in the required fields!", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
         }
 
@@ -36,7 +36,7 @@ public partial class AddEventWindow : Window
             db.SaveChanges();
         }
 
-        MessageBox.Show("Wydarzenie dodane!");
+        MessageBox.Show("Event added!");
         this.Close();
     }
 }

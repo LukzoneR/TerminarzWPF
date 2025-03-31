@@ -21,11 +21,5 @@ public partial class MainWindow : Window
     {
         AddEventWindow addEventWindow = new AddEventWindow();
         addEventWindow.ShowDialog();
-        LoadEvents();
     }
-
-    private void LoadEvents()
-    {
-    }
-
 }

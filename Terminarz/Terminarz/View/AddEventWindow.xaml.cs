@@ -1,42 +1,62 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 using Terminarz.Model;
+using MahApps.Metro.Controls;
 
-namespace Terminarz.View;
-
-public partial class AddEventWindow : MahApps.Metro.Controls.MetroWindow
+namespace Terminarz.View
 {
-    public AddEventWindow()
+    public partial class AddEventWindow : MetroWindow
     {
-        InitializeComponent();
-    }
+        private string selectedColorHex = "#0000FF";
 
-    private void AddEvent_Click(object sender, RoutedEventArgs e)
-    {
-        if (string.IsNullOrWhiteSpace(NameTextBox.Text) ||
-            StartDatePicker.SelectedDateTime == null ||
-            EndDatePicker.SelectedDateTime == null)
+        public AddEventWindow()
         {
-            MessageBox.Show("Fill in the required fields!", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            return;
+            InitializeComponent();
         }
 
-        using (var db = new AppDbContext())
+        private void AddEvent_Click(object sender, RoutedEventArgs e)
         {
-            var newEvent = new Event
+            if (string.IsNullOrWhiteSpace(NameTextBox.Text) ||
+                StartDatePicker.SelectedDateTime == null ||
+                EndDatePicker.SelectedDateTime == null)
             {
-                Name = NameTextBox.Text,
-                Location = LocationTextBox.Text,
-                Starts = StartDatePicker.SelectedDateTime.Value,
-                Ends = EndDatePicker.SelectedDateTime.Value,
-                Color = ColorTextBox.Text,
-                Description = DescriptionTextBox.Text
-            };
+                MessageBox.Show("Fill up required fields!", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
-            db.Events.Add(newEvent);
-            db.SaveChanges();
+            DateTime startDate = StartDatePicker.SelectedDateTime.Value;
+            DateTime endDate = EndDatePicker.SelectedDateTime.Value;
+
+            if (startDate >= endDate)
+            {
+                MessageBox.Show("Start date has to be earlier than End date", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            using (var db = new AppDbContext())
+            {
+                var newEvent = new Event
+                {
+                    Name = NameTextBox.Text,
+                    Location = LocationTextBox.Text,
+                    Starts = startDate,
+                    Ends = endDate,
+                    Color = selectedColorHex,
+                    Description = DescriptionTextBox.Text
+                };
+
+                db.Events.Add(newEvent);
+                db.SaveChanges();
+            }
+
+            MessageBox.Show("Event Added!");
+            this.Close();
         }
 
-        MessageBox.Show("Event added!");
-        this.Close();
+        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (e.NewValue.HasValue)
+                selectedColorHex = e.NewValue.Value.ToString();
+        }
     }
 }

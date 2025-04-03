@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace Terminarz.Model;
-class Event
+public class Event
 {
     [Key]
     public int Id { get; set; }

@@ -2,7 +2,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Input;
+using Terminarz.Model;
 
 namespace Terminarz.ViewModel;
 
@@ -10,6 +12,8 @@ public class MainViewModel : INotifyPropertyChanged
 {
     private DateTime _currentWeekStart;
     public ObservableCollection<string> DaysOfWeek { get; set; }
+    public ObservableCollection<Event> Events { get; set; } = new ObservableCollection<Event>();
+    public ICommand DeleteEventCommand { get; set; }
 
     private int _currentDayIndex;
     public int CurrentDayIndex
@@ -52,6 +56,10 @@ public class MainViewModel : INotifyPropertyChanged
 
         NextWeekCommand = new RelayCommand(_ => ChangeWeek(7));
         PreviousWeekCommand = new RelayCommand(_ => ChangeWeek(-7));
+
+        DeleteEventCommand = new RelayCommand(DeleteEvent);
+
+        LoadEvents();
     }
 
     private void ChangeWeek(int days)
@@ -70,12 +78,53 @@ public class MainViewModel : INotifyPropertyChanged
             WeekDays.Add(day);
             DaysOfWeek.Add(day);
         }
-   
+
         DateTime today = DateTime.Today;
         if (today >= CurrentWeekStart && today < CurrentWeekStart.AddDays(7))
             CurrentDayIndex = (int)(today - CurrentWeekStart).TotalDays;
         else
-            CurrentDayIndex = -1; 
+            CurrentDayIndex = -1;
+    }
+
+    public void LoadEvents()
+    {
+        Events.Clear();
+        using (var db = new AppDbContext())
+        {
+            DateTime weekEnd = CurrentWeekStart.AddDays(7);
+            var events = db.Events
+                .Where(e => e.Starts >= CurrentWeekStart && e.Starts < weekEnd)
+                .ToList();
+
+            foreach (var ev in events)
+            {
+                Events.Add(ev);
+            }
+        }
+        OnPropertyChanged(nameof(Events));
+    }
+
+    private void DeleteEvent(object parameter)
+    {
+        if (parameter is Event eventToDelete)
+        {
+            using (var db = new AppDbContext())
+            {
+                // Znajdź event w bazie danych
+                var eventInDb = db.Events.FirstOrDefault(e => e.Id == eventToDelete.Id);
+                if (eventInDb != null)
+                {
+                    db.Events.Remove(eventInDb);
+                    db.SaveChanges();
+                }
+            }
+
+            // Usuń z kolekcji
+            Events.Remove(eventToDelete);
+
+            MessageBox.Show("Event deleted successfully!", "Success",
+                          MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 
     protected virtual void OnPropertyChanged(string propertyName)

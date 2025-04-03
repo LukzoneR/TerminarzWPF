@@ -2,6 +2,7 @@
 using System.Windows.Media;
 using Terminarz.Model;
 using MahApps.Metro.Controls;
+using Terminarz.ViewModel;
 
 namespace Terminarz.View
 {
@@ -16,6 +17,7 @@ namespace Terminarz.View
 
         private void AddEvent_Click(object sender, RoutedEventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(NameTextBox.Text) ||
                 StartDatePicker.SelectedDateTime == null ||
                 EndDatePicker.SelectedDateTime == null)
@@ -47,6 +49,12 @@ namespace Terminarz.View
 
                 db.Events.Add(newEvent);
                 db.SaveChanges();
+            }
+
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow?.DataContext is MainViewModel viewModel)
+            {
+                viewModel.LoadEvents();
             }
 
             MessageBox.Show("Event Added!");

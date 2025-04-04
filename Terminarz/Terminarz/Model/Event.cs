@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System;
 
 namespace Terminarz.Model;
 public class Event
@@ -16,34 +15,25 @@ public class Event
     public string? Color { get; set; }
     public string? Description { get; set; }
 
-    // Właściwości pomocnicze do pozycjonowania w terminarzu
-    public int Column
-    {
-        get
-        {
-            // Poniedziałek=0, Wtorek=1, ..., Niedziela=6
-            return (int)Starts.DayOfWeek - (int)DayOfWeek.Monday;
-        }
-    }
+    public int Column => (int)Starts.DayOfWeek - (int)DayOfWeek.Monday;
 
     public int Row
     {
         get
         {
-            // Godzina 8:00 = wiersz 8 (indeksowanie od 0)
-            return Starts.Hour;
+            int baseRow = Starts.Hour;
+            if ((Ends - Starts).TotalHours <= 1) 
+                return baseRow - 1;
+            return baseRow;
         }
     }
 
-    public int RowSpan
+    public int RowSpan => (int)Math.Ceiling((Ends - Starts).TotalHours);
+
+    public int GetColumn(DateTime currentWeekStart)
     {
-        get
-        {
-            // Zaokrąglenie w górę do pełnych godzin
-            double hours = (Ends - Starts).TotalHours;
-            return (int)Math.Ceiling(hours);
-        }
+        int dayDifference = (int)(Starts.Date - currentWeekStart.Date).TotalDays;
+
+        return dayDifference >= 0 && dayDifference < 7 ? dayDifference : -1;
     }
-
-
 }

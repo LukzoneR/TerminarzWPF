@@ -1,5 +1,4 @@
-﻿
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
@@ -65,6 +64,7 @@ public class MainViewModel : INotifyPropertyChanged
     private void ChangeWeek(int days)
     {
         CurrentWeekStart = CurrentWeekStart.AddDays(days);
+        LoadEvents();
     }
 
     private void UpdateWeekDays()
@@ -91,9 +91,14 @@ public class MainViewModel : INotifyPropertyChanged
         Events.Clear();
         using (var db = new AppDbContext())
         {
-            DateTime weekEnd = CurrentWeekStart.AddDays(7);
+            DateTime weekStart = CurrentWeekStart;
+            DateTime weekEnd = weekStart.AddDays(7);
+
             var events = db.Events
-                .Where(e => e.Starts >= CurrentWeekStart && e.Starts < weekEnd)
+                .Where(e => e.Starts >= weekStart && e.Starts < weekEnd)
+                .AsEnumerable()
+                .OrderBy(e => e.Starts)
+                .ThenByDescending(e => (e.Ends - e.Starts).TotalHours)
                 .ToList();
 
             foreach (var ev in events)
@@ -101,8 +106,8 @@ public class MainViewModel : INotifyPropertyChanged
                 Events.Add(ev);
             }
         }
-        OnPropertyChanged(nameof(Events));
     }
+
 
     private void DeleteEvent(object parameter)
     {
@@ -110,7 +115,6 @@ public class MainViewModel : INotifyPropertyChanged
         {
             using (var db = new AppDbContext())
             {
-                // Znajdź event w bazie danych
                 var eventInDb = db.Events.FirstOrDefault(e => e.Id == eventToDelete.Id);
                 if (eventInDb != null)
                 {
@@ -119,9 +123,7 @@ public class MainViewModel : INotifyPropertyChanged
                 }
             }
 
-            // Usuń z kolekcji
             Events.Remove(eventToDelete);
-
             MessageBox.Show("Event deleted successfully!", "Success",
                           MessageBoxButton.OK, MessageBoxImage.Information);
         }

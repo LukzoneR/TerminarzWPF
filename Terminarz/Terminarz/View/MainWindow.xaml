@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Terminarz"
         xmlns:m="clr-namespace:Terminarz.Model"
         xmlns:vm="clr-namespace:Terminarz.ViewModel"
-        mc:Ignorable="d"
         FontFamily="Bahnschrift"
         Title="MainWindow" Height="450" Width="800" Background="Black">
 
@@ -15,12 +14,24 @@
     </Window.DataContext>
 
     <Window.Resources>
+        <m:VisibilityConverter x:Key="VisibilityConverter"/>
+        <m:EventToColumnMultiConverter x:Key="EventToColumnMultiConverter"/>
+        <m:EventToColumnConverter x:Key="EventToColumnConverter"/>
+        <m:ColorHexToBrushConverter x:Key="ColorConverter"/>
+
         <Style x:Key="CurrentDayStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        <m:ColorHexToBrushConverter x:Key="ColorConverter"/>
-
+        
+        <Style TargetType="ToolTip">
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        
         <Style x:Key="DeleteEventButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -147,20 +158,20 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-
             <TextBlock Grid.Column="1"
-                       Text="Monday"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"  
-                       VerticalAlignment="top"
-                       Width="83"
-                       Foreground="#e4e3e1"
-                       TextAlignment="Center"
-                       Padding="4"/>
+                    Text="Monday"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center"  
+                    VerticalAlignment="top"
+                    Width="83"
+                    Foreground="#e4e3e1"
+                    TextAlignment="Center"
+                    Padding="4"/>
+            
             <TextBlock Grid.Column="1"
-                       Text="{Binding DaysOfWeek[0]}"
-                       HorizontalAlignment="Center"
-                       Margin="0,25,0,11" Width="28">
+                    Text="{Binding DaysOfWeek[0]}"
+                    HorizontalAlignment="Center"
+                    Margin="0,25,0,11" Width="28">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock" BasedOn="{StaticResource CurrentDayStyle}">
                         <Style.Triggers>
@@ -180,6 +191,7 @@
                        Foreground="#e4e3e1"
                        TextAlignment="Center"
                        Padding="4"/>
+            
             <TextBlock Grid.Column="2"
                        Text="{Binding DaysOfWeek[1]}"
                        HorizontalAlignment="Center"
@@ -202,6 +214,7 @@
                        HorizontalAlignment="Center"
                        Foreground="#e4e3e1" TextAlignment="Center"
                        Padding="4"/>
+            
             <TextBlock Grid.Column="3"
                        Text="{Binding DaysOfWeek[2]}"
                        HorizontalAlignment="Center" 
@@ -224,6 +237,7 @@
                        Foreground="#e4e3e1" 
                        TextAlignment="Center"
                        Padding="4"/>
+            
             <TextBlock Grid.Column="4" 
                        Text="{Binding DaysOfWeek[3]}"
                        HorizontalAlignment="Center"
@@ -245,6 +259,7 @@
                        HorizontalAlignment="Center" 
                        Foreground="#e4e3e1"
                        TextAlignment="Center" Padding="4"/>
+            
             <TextBlock Grid.Column="5"
                        Text="{Binding DaysOfWeek[4]}" 
                        HorizontalAlignment="Center"
@@ -267,6 +282,7 @@
                        HorizontalAlignment="Center"
                        Foreground="#e4e3e1" 
                        TextAlignment="Center" Padding="4"/>
+            
             <TextBlock Grid.Column="6" 
                        Text="{Binding DaysOfWeek[5]}" 
                        HorizontalAlignment="Center"
@@ -288,6 +304,7 @@
                        HorizontalAlignment="Center"
                        Foreground="#e4e3e1"
                        TextAlignment="Center" Padding="4"/>
+            
             <TextBlock Grid.Column="7" 
                        Text="{Binding DaysOfWeek[6]}"
                        HorizontalAlignment="Center"
@@ -318,10 +335,9 @@
                            HorizontalAlignment="Center" Height="37"
                            Width="17" Foreground="white" RenderTransformOrigin="0.542,0.511"/>
             </Button>
-
         </Grid>
 
-        <!-- Scrol scheduler -->
+        <!-- Scrol schedule -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Grid.RowSpan="25" Margin="0,50,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -336,7 +352,6 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <!-- rows for each hour -->
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
@@ -428,7 +443,7 @@
 
                 <!-- Event -->
                 <ItemsControl Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="24"
-              ItemsSource="{Binding Events}">
+                              ItemsSource="{Binding Events}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <Grid IsItemsHost="True"
@@ -436,38 +451,63 @@
                                   m:GridHelpers.ColumnCount="7"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
+                    
                     <ItemsControl.ItemContainerStyle>
                         <Style>
-                            <Setter Property="Grid.Column" Value="{Binding Column}"/>
+                            <Setter Property="Grid.Column" Value="{Binding Starts, Converter={StaticResource EventToColumnConverter}}"/>
                             <Setter Property="Grid.Row" Value="{Binding Row}"/>
                             <Setter Property="Grid.RowSpan" Value="{Binding RowSpan}"/>
                             <Setter Property="Grid.Margin" Value="2,0,2,0"/>
                         </Style>
                     </ItemsControl.ItemContainerStyle>
+                    
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border Background="{Binding Color, Converter={StaticResource ColorConverter}}" 
-            CornerRadius="3" Margin="0,2" BorderBrush="#40000000" BorderThickness="1">
+                                    CornerRadius="3" Margin="0,2" BorderBrush="#40000000" BorderThickness="1">
+                                <Border.ToolTip>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}" 
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   Foreground="White"/>
+                                        
+                                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0"
+                                                    Visibility="{Binding Location, Converter={StaticResource VisibilityConverter}}">
+                                            <TextBlock Text="📍" Margin="0,0,5,0"/>
+                                            <TextBlock Text="{Binding Location}" Foreground="White"/>
+                                        </StackPanel>
+
+                                        <TextBlock Text="{Binding Description}" 
+                                                   TextWrapping="Wrap"
+                                                   MaxWidth="300"
+                                                   Margin="0,5,0,0"
+                                                   Foreground="#DDD"
+                                                   Visibility="{Binding Description, Converter={StaticResource VisibilityConverter}}"/>
+
+                                        <StackPanel Margin="0,5,0,0">
+                                            <TextBlock Text="{Binding Starts, StringFormat='⌚ Rozpoczęcie: {0:dd.MM.yyyy HH:mm}'}" Foreground="White"/>
+                                            <TextBlock Text="{Binding Ends, StringFormat='⌚ Zakończenie: {0:dd.MM.yyyy HH:mm}'}" Foreground="White"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border.ToolTip>
+
                                 <Grid>
-                                    <!-- Główna zawartość eventu -->
                                     <StackPanel Orientation="Vertical" Margin="5,2">
                                         <TextBlock Text="{Binding Name}" FontWeight="SemiBold" Foreground="White"/>
-                                        <TextBlock Text="{Binding Starts, StringFormat='HH:mm - '}" 
-                           Foreground="White" FontSize="10"><TextBlock Text="{Binding Ends, StringFormat='HH:mm'}" 
-Foreground="White" FontSize="10"/></TextBlock>
-                                        
+                                        <TextBlock Text="{Binding Starts, StringFormat='HH:mm - '}" Foreground="White" FontSize="10">
+                                            <TextBlock Text="{Binding Ends, StringFormat='HH:mm'}" Foreground="White" FontSize="10"/>
+                                        </TextBlock>
                                     </StackPanel>
 
-                                    <!-- Przycisk usuwania - teraz dobrze widoczny -->
                                     <Button Command="{Binding DataContext.DeleteEventCommand, 
-                            RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                    CommandParameter="{Binding}"
-                    Style="{StaticResource DeleteEventButtonStyle}"
-                    HorizontalAlignment="Right" 
-                    VerticalAlignment="Top"
-                    Margin="2"
-                    Cursor="Hand"
-                    ToolTip="Delete event"/>
+                                            RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource DeleteEventButtonStyle}"
+                                            HorizontalAlignment="Right" 
+                                            VerticalAlignment="Top"
+                                            Margin="2"
+                                            Cursor="Hand"/>
                                 </Grid>
                             </Border>
                         </DataTemplate>

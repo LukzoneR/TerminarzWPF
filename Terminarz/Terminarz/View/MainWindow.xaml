@@ -23,7 +23,7 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        
+
         <Style TargetType="ToolTip">
             <Setter Property="Background" Value="#333333"/>
             <Setter Property="Foreground" Value="White"/>
@@ -31,7 +31,7 @@
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="10"/>
         </Style>
-        
+
         <Style x:Key="DeleteEventButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -57,6 +57,12 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style TargetType="Calendar">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
         </Style>
     </Window.Resources>
 
@@ -113,6 +119,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0"
@@ -127,8 +134,22 @@
                            FontSize="16"
                            FontWeight="Bold"
                            Foreground="#e4e3e1" 
-                           TextAlignment="Center"
-                           Margin="5,0,0,0"/>
+                           TextAlignment="Center"/>
+                <Button x:Name="CalendarButton"
+                        Cursor="Hand" 
+                        Grid.Column="2"
+                        Content="📅" 
+                        FontSize="13"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        ToolTip="Wybierz datę"
+                        HorizontalAlignment="Left"
+                        Width="20" Click="CalendarButton_Click" Height="18"
+                        MinWidth="10"
+                        MinHeight="10"
+                        Padding="0"
+                        VerticalAlignment="Top" Margin="1,0,0,0"/>
             </Grid>
 
             <Button Grid.Column="2"
@@ -167,7 +188,7 @@
                     Foreground="#e4e3e1"
                     TextAlignment="Center"
                     Padding="4"/>
-            
+
             <TextBlock Grid.Column="1"
                     Text="{Binding DaysOfWeek[0]}"
                     HorizontalAlignment="Center"
@@ -191,7 +212,7 @@
                        Foreground="#e4e3e1"
                        TextAlignment="Center"
                        Padding="4"/>
-            
+
             <TextBlock Grid.Column="2"
                        Text="{Binding DaysOfWeek[1]}"
                        HorizontalAlignment="Center"
@@ -214,7 +235,7 @@
                        HorizontalAlignment="Center"
                        Foreground="#e4e3e1" TextAlignment="Center"
                        Padding="4"/>
-            
+
             <TextBlock Grid.Column="3"
                        Text="{Binding DaysOfWeek[2]}"
                        HorizontalAlignment="Center" 
@@ -237,7 +258,7 @@
                        Foreground="#e4e3e1" 
                        TextAlignment="Center"
                        Padding="4"/>
-            
+
             <TextBlock Grid.Column="4" 
                        Text="{Binding DaysOfWeek[3]}"
                        HorizontalAlignment="Center"
@@ -259,7 +280,7 @@
                        HorizontalAlignment="Center" 
                        Foreground="#e4e3e1"
                        TextAlignment="Center" Padding="4"/>
-            
+
             <TextBlock Grid.Column="5"
                        Text="{Binding DaysOfWeek[4]}" 
                        HorizontalAlignment="Center"
@@ -282,7 +303,7 @@
                        HorizontalAlignment="Center"
                        Foreground="#e4e3e1" 
                        TextAlignment="Center" Padding="4"/>
-            
+
             <TextBlock Grid.Column="6" 
                        Text="{Binding DaysOfWeek[5]}" 
                        HorizontalAlignment="Center"
@@ -304,7 +325,7 @@
                        HorizontalAlignment="Center"
                        Foreground="#e4e3e1"
                        TextAlignment="Center" Padding="4"/>
-            
+
             <TextBlock Grid.Column="7" 
                        Text="{Binding DaysOfWeek[6]}"
                        HorizontalAlignment="Center"
@@ -338,6 +359,18 @@
         </Grid>
 
         <!-- Scrol schedule -->
+        <Popup x:Name="CalendarPopup" 
+               PlacementTarget="{Binding ElementName=CalendarButton}"
+               StaysOpen="False"
+               Width="250"
+               AllowsTransparency="True">
+            <Border Background="#333333" BorderBrush="#555555" BorderThickness="1" Padding="5">
+                <Calendar x:Name="MiniCalendar"
+                  SelectionMode="SingleDate"
+                  SelectedDatesChanged="MiniCalendar_SelectedDatesChanged"/>
+            </Border>
+        </Popup>
+
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Grid.RowSpan="25" Margin="0,50,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -379,30 +412,30 @@
                 </Grid.RowDefinitions>
 
                 <!-- Time labels -->
-                <TextBlock Grid.Row="0" Text="1:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="1" Text="2:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="2" Text="3:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="3" Text="4:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="4" Text="5:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="5" Text="6:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="6" Text="7:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="7" Text="8:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="8" Text="9:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="9" Text="10:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="10" Text="11:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="11" Text="12:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="12" Text="13:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="13" Text="14:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="14" Text="15:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="15" Text="16:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="16" Text="17:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="17" Text="18:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="18" Text="19:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="19" Text="20:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="20" Text="21:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="21" Text="22:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="22" Text="23:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
-                <TextBlock Grid.Row="23" Text="24:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="0" Text="0:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="1:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="2" Text="2:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="3" Text="3:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="4" Text="4:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="5" Text="5:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="6" Text="6:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="7" Text="7:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="8" Text="8:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="9" Text="9:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="10" Text="10:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="11" Text="11:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="12" Text="12:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="13" Text="13:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="14" Text="14:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="15" Text="15:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="16" Text="16:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="17" Text="17:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="18" Text="18:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="19" Text="19:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="20" Text="20:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="21" Text="21:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="22" Text="22:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
+                <TextBlock Grid.Row="23" Text="23:00" VerticalAlignment="Center" Margin="5" Foreground="#e4e3e1" TextAlignment="Center"/>
 
                 <!-- Grid lines -->
                 <Border Grid.RowSpan="9" Grid.ColumnSpan="8" BorderBrush="Gray" BorderThickness="1"/>
@@ -451,7 +484,7 @@
                                   m:GridHelpers.ColumnCount="7"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    
+
                     <ItemsControl.ItemContainerStyle>
                         <Style>
                             <Setter Property="Grid.Column" Value="{Binding Starts, Converter={StaticResource EventToColumnConverter}}"/>
@@ -460,7 +493,7 @@
                             <Setter Property="Grid.Margin" Value="2,0,2,0"/>
                         </Style>
                     </ItemsControl.ItemContainerStyle>
-                    
+
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border Background="{Binding Color, Converter={StaticResource ColorConverter}}" 
@@ -471,7 +504,7 @@
                                                    FontWeight="Bold"
                                                    FontSize="14"
                                                    Foreground="White"/>
-                                        
+
                                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0"
                                                     Visibility="{Binding Location, Converter={StaticResource VisibilityConverter}}">
                                             <TextBlock Text="📍" Margin="0,0,5,0"/>

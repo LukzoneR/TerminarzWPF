@@ -12,10 +12,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        DataContext = new MainViewModel();
-
-        FontFamily customFontFamily = new FontFamily("pack://application:,,,/res/variableFont.ttf#variableFont");
-        this.FontFamily = customFontFamily;  
+        DataContext = new MainViewModel();  
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)

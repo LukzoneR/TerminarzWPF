@@ -4,7 +4,7 @@
 
 ---
 
-## 🧰 Technologies and Tools
+##  Technologies and Tools
 
 - **.NET Framework / .NET Core (WPF)**
 - **C#**
@@ -15,19 +15,19 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ Weekly calendar grid (days as columns, hours as rows)
-- ✅ Add new events (with name, date, time, location, color, and description)
-- ✅ Automatically position events in the correct day/time slot
-- ✅ Color-coded events based on user selection
-- ✅ Navigate between weeks using arrow buttons
-- ✅ Delete events
-- ✅ Events are loaded from a SQL Server (LocalDB) database
+- Weekly calendar grid (days as columns, hours as rows)
+- Add new events (with name, date, time, location, color, and description)
+- Automatically position events in the correct day/time slot
+- Color-coded events based on user selection
+- Navigate between weeks using arrow buttons
+- Delete events
+- Events are loaded from a SQL Server (LocalDB) database
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ![image](https://github.com/user-attachments/assets/29fdfb68-171e-4b6b-a162-66c4b6947a30)
 <br>
@@ -41,7 +41,7 @@
 
 ---
 
-## 📦 System Requirements
+## System Requirements
 
 - Operating System: **Windows 10 / 11**
 - .NET Framework: **>= 4.7.2** or **.NET 6+**
@@ -50,7 +50,7 @@
 
 ---
 
-## ⚙️ Installation & Run Instructions
+## Installation & Run Instructions
 
 1. **Clone the repository:**
    ```bash

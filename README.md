@@ -1,6 +1,6 @@
-# 📅 Terminarz – Weekly Event Planner Application
+# 📅 Terminarz(Scheduler) – Weekly Event Planner Application
 
-**Terminarz** is a desktop application built with WPF, designed to help users plan and view events in a weekly calendar view. Events are stored in a local **SQL Server** database and displayed in a calendar grid with assigned colors, names, dates, and times.
+**Terminarz(Scheduler)** is a desktop application built with WPF, designed to help users plan and view events in a weekly calendar view. Events are stored in a local **SQL Server** database and displayed in a calendar grid with assigned colors, names, dates, and times.
 
 ---
 
